@@ -31,6 +31,9 @@ public partial class Player : CharacterBody2D
 			GD.Print("attacked by player");
 			this.HitboxComponent.Hurt();
 		}
+
+		this.Velocity = this.VelocityComponent.Velocity;
+		this.MoveAndSlide();
 	}
 
 	public void HealthZeroed()
