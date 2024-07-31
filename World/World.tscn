@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cw3jwtsqe73fo"]
+
+[ext_resource type="PackedScene" uid="uid://dv3utcc6qnre4" path="res://Player/Player.tscn" id="1_xledd"]
+[ext_resource type="PackedScene" uid="uid://c62se0brjod8" path="res://Dummy/Dummy.tscn" id="2_4yvt1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ah7u"]
+
+[node name="World" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_xledd")]
+position = Vector2(-170, 206)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2(-2, 232)
+scale = Vector2(50, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+shape = SubResource("RectangleShape2D_5ah7u")
+
+[node name="Dummy" parent="." instance=ExtResource("2_4yvt1")]
+position = Vector2(-89, 208)

@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://c62se0brjod8"]
+
+[ext_resource type="Script" path="res://Dummy/Dummy.cs" id="1_jeynt"]
+[ext_resource type="Script" path="res://Component/HealthComponent.cs" id="2_86w6h"]
+[ext_resource type="Script" path="res://Component/HurtboxComponent.cs" id="3_5re2u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4bkp2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hbn0m"]
+
+[node name="Dummy" type="CharacterBody2D"]
+script = ExtResource("1_jeynt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4bkp2")
+
+[node name="HealthComponent" type="Node" parent="."]
+script = ExtResource("2_86w6h")
+HealthPoints = 55
+
+[node name="HurtboxComponent" type="Area2D" parent="."]
+script = ExtResource("3_5re2u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent"]
+shape = SubResource("RectangleShape2D_hbn0m")
+debug_color = Color(0.168289, 0.636793, 0.281637, 0.42)
